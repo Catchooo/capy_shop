@@ -27,11 +27,18 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.logo a img {
+    max-height: 40px; /* Встанови бажану максимальну висоту */
+    display: block; /* Щоб уникнути зайвого простору під зображенням */
+}
+
 .logo a {
     font-size: 28px;
     font-weight: bold;
     color: #558b2f;
     text-decoration: none;
+    display: flex; /* Вирівнювання зображення по центру вертикалі, якщо потрібно */
+    align-items: center; /* Вирівнювання зображення по центру вертикалі, якщо потрібно */
 }
 
 nav ul {
