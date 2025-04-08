@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'DS_Pixel_Cyr';
-    src: url('DS_Pixel_Cyr.ttf') format('truetype'); /* Переконайтеся, що файл шрифту bauhaus93.ttf знаходиться в одній папці з style.css */
+    font-family: 'DS Pixel Cyr';
+    src: url('DS_Pixel_Cyr.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'DS_Pixel_Cyr', sans-serif; /* Застосовуємо шрифт Bauhaus 93, з запасним sans-serif */
+    font-family: 'DS Pixel Cyr', sans-serif;
     margin: 0;
     padding-top: 60px;
     background-color: #f4f4f4;
@@ -28,11 +28,11 @@ body {
 }
 
 .logo a {
-    display: block; /* Щоб зображення займало всю площу посилання */
+    display: block;
 }
 
 .logo img {
-    max-height: 50px; /* Задайте бажану висоту логотипа */
+    max-height: 60px;
 }
 
 nav {
@@ -75,7 +75,7 @@ nav ul li a:hover {
     cursor: pointer;
     font-size: 1.1em;
     transition: color 0.3s ease;
-    padding: 0; /* Приберемо зайві відступи */
+    padding: 0;
 }
 
 #open-cart-btn:hover {
@@ -97,16 +97,9 @@ nav ul li a:hover {
 
 .hero {
     position: relative;
-    height: 400px; /* Задайте потрібну висоту */
+    height: 400px;
     margin-bottom: 20px;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    font-size: 3em;
-    font-weight: bold;
 }
 
 .hero-background {
@@ -123,12 +116,15 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('back-1.jpg'); /* Шлях до фото вашої капібари */
     background-size: cover;
     background-position: center;
-    z-index: 1; /* Зображення капібари знизу спочатку */
-    opacity: 0; /* Спочатку невидиме */
+    z-index: 1;
+    opacity: 0;
     transition: opacity 1s ease-in-out;
+}
+
+.hero:hover .hero-image {
+    opacity: 1;
 }
 
 .hero-transition {
@@ -137,18 +133,21 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px); /* Полоски */
+    background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2; /* Полоски зверху спочатку */
     font-size: 3em;
+    font-weight: bold;
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    opacity: 1;
     transition: opacity 1s ease-in-out;
 }
 
 .hero-transition::before {
-    content: "Наші товари";
+    content: "Наші товари"; /* За замовчуванням для головної сторінки */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -156,199 +155,20 @@ nav ul li a:hover {
     z-index: 3;
 }
 
-.hero:hover .hero-image {
-    opacity: 1; /* При наведенні зображення капібари стає видимим */
+body:not(.about-page):not(.contact-page) .hero-image {
+    background-image: url('back-1.jpg');
 }
 
-.hero:hover .hero-transition {
-    opacity: 0; /* При наведенні полоски стають невидимими */
+body.about-page .hero-image {
+    background-image: url('about.png');
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+body.contact-page .hero-image {
+    background-image: url('ww.jpg');
 }
 
-.product-item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-.product-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.product-item h3 {
-    font-size: 1.5em;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.product-item .price {
-    color: #558b2f;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-footer {
-    background-color: #333;
-    color: #f4f4f4;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9em;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Стилі для модального вікна кошика */
-.cart-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
-    display: none; /* Спочатку прихований */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.cart-content {
+.about-us-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
-}
-
-.cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.cart-header h2 {
-    margin: 0;
-    color: #333;
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    color: #aaa;
-    font-size: 2em;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.close-btn:hover {
-    color: #333;
-}
-
-#cart-items {
-    margin-bottom: 15px;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-}
-
-.cart-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.cart-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-.cart-item-details {
-    flex-grow: 1;
-}
-
-.cart-item-name {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.cart-item-price {
-    color: #558b2f;
-    font-size: 0.9em;
-}
-
-.cart-item-quantity {
-    margin-left: auto;
-    font-size: 0.9em;
-    color: #777;
-}
-
-.remove-from-cart-btn {
-    background: none;
-    border: none;
-    color: #ff6f61;
-    cursor: pointer;
-    font-size: 1em;
-    margin-left: 10px;
-}
-
-.remove-from-cart-btn:hover {
-    color: #d32f2f;
-}
-
-.cart-footer {
-    text-align: right;
-}
-
-.cart-footer p {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.checkout-btn {
-    background-color: #558b2f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-.checkout-btn:hover {
-    background-color: #38661d;
-}
-
-#empty-cart-message {
-    color: #777;
-    text-align: center;
-    padding: 20px 0;
-}
+    box-shadow: 0 2px 5px rgba(0,
