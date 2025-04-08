@@ -22,10 +22,20 @@ body {
     width: 100%;
     z-index: 100;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Розміщує логотип зліва, а навігацію справа */
+    align-items: center; /* Вирівнює елементи по вертикалі по центру */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+nav {
+    display: flex; /* Додаємо flex до навігації */
+    align-items: center; /* Вирівнюємо елементи навігації по вертикалі по центру */
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center; /* Вирівнюємо іконку кошика по вертикалі по центру */
+    margin-left: 20px; /* Додамо трохи відступу зліва від кошика */
 
 .logo a {
     font-size: 28px;
