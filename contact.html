@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакти - Капібара шоп</title>
+    <title>Контакти - Capybara shop</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="contact-page">
     <header class="fixed-header">
         <div class="logo">
-            <a href="index.html">CApy_.png</a>
+            <a href="index.html">
+                <img src="CApy_.png" alt="Логотип Capybara Shop">
+            </a>
         </div>
         <nav>
             <ul>
@@ -18,29 +20,33 @@
                 <li><a href="contact.html">Контакти</a></li>
             </ul>
         </nav>
+        <div class="cart-icon">
+            <button id="open-cart-btn">Кошик</button>
+            <span id="cart-item-count">0</span>
+        </div>
     </header>
 
     <main class="content">
         <section class="hero">
             <div class="hero-background">
-                <div class="hero-image" style="background-image: url('ww.jpg');"></div>
-                <div class="hero-transition">Контакти</div>
+                <div class="hero-image"></div>
+                <div class="hero-transition"></div>
             </div>
         </section>
 
-        <section class="contact-form">
+        <section class="contact-us-form">
             <h2>Зв'яжіться з нами</h2>
             <form>
                 <div class="form-group">
-                    <label for="email">Електронна пошта: br.m.airways@gmail.com</label>
+                    <label for="email">Електронна пошта:</label>
                     <input type="email" id="email" name="email">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Номер телефону: 380681163076</label>
+                    <label for="phone">Номер телефону:</label>
                     <input type="tel" id="phone" name="phone">
                 </div>
                 <div class="form-group">
-                    <label for="telegram">Юзернейм в Telegram: @misterbarabil</label>
+                    <label for="telegram">Юзернейм Telegram:</label>
                     <input type="text" id="telegram" name="telegram">
                 </div>
                 <button type="submit">Надіслати</button>
@@ -51,5 +57,23 @@
     <footer>
         <p>&copy; 2025. All rights reserved</p>
     </footer>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Кошик</h2>
+                <button id="close-cart-btn" class="close-btn">&times;</button>
+            </div>
+            <div id="cart-items">
+                <p id="empty-cart-message">Кошик порожній.</p>
+                </div>
+            <div class="cart-footer">
+                <p>Загалом: <span id="cart-total">0 грн</span></p>
+                <button class="checkout-btn">Оформити замовлення</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
