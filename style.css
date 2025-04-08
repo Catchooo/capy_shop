@@ -72,9 +72,9 @@ nav ul li a:hover {
 
 .hero {
     position: relative;
-    height: 400px;
+    height: 400px; /* Збільшимо висоту для кращого відображення ефекту */
     margin-bottom: 20px;
-    overflow: hidden;
+    overflow: hidden; /* Щоб смуги не виходили за межі */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,8 +100,8 @@ nav ul li a:hover {
     height: 100%;
     background-size: cover;
     background-position: center;
-    z-index: 1;
-    transition: opacity 1s ease-in-out;
+    z-index: 2; /* Зображення зверху спочатку */
+    transition: opacity 1s ease-in-out; /* Плавний перехід видимості */
 }
 
 .hero-transition {
@@ -110,15 +110,23 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, black 50%, transparent 50%);
+    background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px); /* Чорно-білі смуги */
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    z-index: 2;
+    opacity: 0; /* Спочатку невидимий */
+    z-index: 1; /* Текст з полосками знизу спочатку */
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    transition: opacity 1s ease-in-out, background 2s ease-in-out;
+    transition: opacity 1s ease-in-out; /* Плавний перехід */
+}
+
+.hero:hover .hero-image {
+    opacity: 0; /* При наведенні фото стає невидимим */
+}
+
+.hero:hover .hero-transition {
+    opacity: 1; /* При наведенні з'являється перехід */
 }
 
 .hero:hover .hero-image {
