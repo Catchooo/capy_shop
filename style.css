@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'DS_Pixel_Cyr';
-    src: url('DS_Pixel_Cyr.ttf') format('truetype'); 
+    font-family: 'Bauhaus 93';
+    src: url('bauhaus93.ttf') format('truetype'); /* Переконайтеся, що файл шрифту bauhaus93.ttf знаходиться в одній папці з style.css */
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'DS_Pixel_Cyr', sans-serif; 
+    font-family: 'Bauhaus 93', sans-serif; /* Застосовуємо шрифт Bauhaus 93, з запасним sans-serif */
     margin: 0;
     padding-top: 60px;
     background-color: #f4f4f4;
@@ -22,26 +22,22 @@ body {
     width: 100%;
     z-index: 100;
     display: flex;
-    justify-content: space-between; /* Розміщує логотип зліва, а навігацію справа */
-    align-items: center; /* Вирівнює елементи по вертикалі по центру */
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav {
-    display: flex; /* Додаємо flex до навігації */
-    align-items: center; /* Вирівнюємо елементи навігації по вертикалі по центру */
+.logo a {
+    display: block; /* Щоб зображення займало всю площу посилання */
 }
 
-.cart-icon {
-    display: flex;
-    align-items: center; /* Вирівнюємо іконку кошика по вертикалі по центру */
-    margin-left: 20px; /* Додамо трохи відступу зліва від кошика */
+.logo img {
+    max-height: 40px; /* Задайте бажану висоту логотипа */
+}
 
-.logo a {
-    font-size: 28px;
-    font-weight: bold;
-    color: #558b2f;
-    text-decoration: none;
+nav {
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -66,21 +62,50 @@ nav ul li a:hover {
     color: #007bff;
 }
 
+.cart-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#open-cart-btn {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    padding: 0; /* Приберемо зайві відступи */
+}
+
+#open-cart-btn:hover {
+    color: #558b2f;
+}
+
+#cart-item-count {
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
 .content {
     padding: 20px;
 }
 
 .hero {
     position: relative;
-    height: 400px; /* Збільшимо висоту для кращого відображення ефекту */
+    height: 400px; /* Задайте потрібну висоту */
     margin-bottom: 20px;
-    overflow: hidden; /* Щоб смуги не виходили за межі */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
 }
 
@@ -98,10 +123,12 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
+    background-image: url('your-capybara-photo.jpg'); /* Шлях до фото вашої капібари */
     background-size: cover;
     background-position: center;
-    z-index: 2; /* Зображення зверху спочатку */
-    transition: opacity 1s ease-in-out; /* Плавний перехід видимості */
+    z-index: 1; /* Зображення капібари знизу спочатку */
+    opacity: 0; /* Спочатку невидиме */
+    transition: opacity 1s ease-in-out;
 }
 
 .hero-transition {
@@ -110,32 +137,31 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px); /* Чорно-білі смуги */
+    background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px); /* Полоски */
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Спочатку невидимий */
-    z-index: 1; /* Текст з полосками знизу спочатку */
+    z-index: 2; /* Полоски зверху спочатку */
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    transition: opacity 1s ease-in-out; /* Плавний перехід */
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-transition::before {
+    content: "Наші товари";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
 }
 
 .hero:hover .hero-image {
-    opacity: 0; /* При наведенні фото стає невидимим */
+    opacity: 1; /* При наведенні зображення капібари стає видимим */
 }
 
 .hero:hover .hero-transition {
-    opacity: 1; /* При наведенні з'являється перехід */
-}
-
-.hero:hover .hero-image {
-    opacity: 0;
-}
-
-.hero:hover .hero-transition {
-    opacity: 1;
-    background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px);
+    opacity: 0; /* При наведенні полоски стають невидимими */
 }
 
 .product-grid {
@@ -184,34 +210,6 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-}
-/* Стилі для іконки кошика в шапці */
-.cart-icon {
-    display: flex;
-    align-items: center;
-}
-
-#open-cart-btn {
-    background: none;
-    border: none;
-    color: #333;
-    cursor: pointer;
-    font-size: 1.1em;
-    margin-left: 20px;
-    transition: color 0.3s ease;
-}
-
-#open-cart-btn:hover {
-    color: #558b2f;
-}
-
-#cart-item-count {
-    background-color: #ff6f61;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 8px;
-    font-size: 0.8em;
-    margin-left: 5px;
 }
 
 /* Стилі для модального вікна кошика */
