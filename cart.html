@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кошик - Capybara shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="CApy_.png" type="image/png">
+</head>
+<body class="cart-page">
+    <header class="fixed-header">
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-initial">
+                    <div class="logo-bar"></div>
+                    <div class="logo-bar"></div>
+                    <div class="logo-bar"></div>
+                </div>
+                <img class="logo-image" src="CApy_.png" alt="Логотип Capybara Shop">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="cart.html">Кошик</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="cart-items">
+            <h2>Ваш кошик</h2>
+            <div id="cart-items-list">
+                <p id="empty-cart-message">Кошик порожній.</p>
+            </div>
+            <p>Загалом: <span id="cart-total">0 грн</span></p>
+            <button class="checkout-btn">Оформити замовлення</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025. All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
