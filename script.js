@@ -92,4 +92,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCartDisplay(); // Відображаємо кошик при завантаженні сторінки (якщо є товари)
 });
-});
