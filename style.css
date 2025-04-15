@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'DS_Pixel_Cyr';
-    src: url('DS_Pixel_Cyr.ttf') format('truetype'); 
+    src: url('DS_Pixel_Cyr.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'DS_Pixel_Cyr', sans-serif; 
+    font-family: 'DS_Pixel_Cyr', sans-serif;
     margin: 0;
     padding-top: 60px;
     background-color: #f4f4f4;
@@ -28,8 +28,8 @@ body {
 }
 
 .logo a img {
-    max-height: 40px; /* Встанови бажану максимальну висоту */
-    display: block; /* Щоб уникнути зайвого простору під зображенням */
+    max-height: 40px;
+    display: block;
 }
 
 .logo a {
@@ -37,8 +37,8 @@ body {
     font-weight: bold;
     color: #558b2f;
     text-decoration: none;
-    display: flex; /* Вирівнювання зображення по центру вертикалі, якщо потрібно */
-    align-items: center; /* Вирівнювання зображення по центру вертикалі, якщо потрібно */
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -174,7 +174,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
-/* Стилі для іконки кошика в шапці */
+
 .cart-icon {
     display: flex;
     align-items: center;
@@ -203,15 +203,14 @@ footer {
     margin-left: 5px;
 }
 
-/* Стилі для модального вікна кошика */
 .cart-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
-    display: none; /* Спочатку прихований */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
