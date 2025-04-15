@@ -11,7 +11,12 @@
     <header class="fixed-header">
         <div class="logo">
             <a href="index.html">
-                <img src="CApy_.png" alt="Логотип Capybara Shop">
+                <div class="logo-initial">
+                    <div class="logo-bar"></div>
+                    <div class="logo-bar"></div>
+                    <div class="logo-bar"></div>
+                </div>
+                <img class="logo-image" src="CApy_.png" alt="Логотип Capybara Shop">
             </a>
         </div>
         <nav>
@@ -19,6 +24,7 @@
                 <li><a href="index.html">Головна</a></li>
                 <li><a href="about.html">Про нас</a></li>
                 <li><a href="contact.html">Контакти</a></li>
+                <li><a href="cart.html">Кошик</a></li>
             </ul>
         </nav>
         <div class="cart-icon">
@@ -28,28 +34,28 @@
     </header>
 
     <main class="content">
-        <section class="hero">
-            <div class="hero-background">
-                <div class="hero-image" style="background-image: url('ww.jpg');"></div>
-                <div class="hero-transition"а>Зв'яжіться з нами!</div>
-            </div>
+        <section class="contact-info">
+            <h2>Наші контакти</h2>
+            <p>Ви можете зв'язатися з нами за наступними контактами:</p>
+            <ul>
+                <li>Email: info@capyshop.com</li>
+                <li>Телефон: +38 (0XX) XXX-XX-XX</li>
+                <li>Адреса: м. Київ, вул. Капібарська, 1</li>
+            </ul>
         </section>
 
-        <section class="contact-us-form">
-            <h2>Зв'яжіться з нами</h2>
-            <form>
-                <div class="form-group">
-                    <label for="email">Електронна пошта:</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Номер телефону:</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <label for="telegram">Юзернейм Telegram:</label>
-                    <input type="text" id="telegram" name="telegram">
-                </div>
+        <section class="contact-form">
+            <h2>Напишіть нам</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Повідомлення:</label>
+                <textarea id="message" name="message" required></textarea>
+
                 <button type="submit">Надіслати</button>
             </form>
         </section>
@@ -67,13 +73,17 @@
             </div>
             <div id="cart-items">
                 <p id="empty-cart-message">Кошик порожній.</p>
-                </div>
+            </div>
             <div class="cart-footer">
                 <p>Загалом: <span id="cart-total">0 грн</span></p>
                 <button class="checkout-btn">Оформити замовлення</button>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
     <script src="script.js"></script>
 </body>
