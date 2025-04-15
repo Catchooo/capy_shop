@@ -34,23 +34,25 @@
     </header>
 
     <main class="content">
+        <section class="hero">
+            <div class="hero-background">
+                <div class="hero-image" style="background-image: url('ww.jpg');"></div>
+                <div class="hero-transition">Контакти</div>
+            </div>
+        </section>
+
         <section class="contact-info">
             <h2>Наші контакти</h2>
             <p>Ви можете зв'язатися з нами за наступними контактами:</p>
             <ul>
-                <li>Email: info@capyshop.com</li>
-                <li>Телефон: +38 (0XX) XXX-XX-XX</li>
-                <li>Адреса: м. Київ, вул. Капібарська, 1</li>
+                <li>Email: br.m.airways@gmail.com</li>
             </ul>
         </section>
 
         <section class="contact-form">
             <h2>Напишіть нам</h2>
-            <form action="submit_form.php" method="post">
-                <label for="name">Ім'я:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
+            <form action="send_email.php" method="post">
+                <label for="email">Ваш Email:</label>
                 <input type="email" id="email" name="email" required>
 
                 <label for="message">Повідомлення:</label>
@@ -80,10 +82,6 @@
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
 
     <script src="script.js"></script>
 </body>
