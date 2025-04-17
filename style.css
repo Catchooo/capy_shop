@@ -9,7 +9,7 @@ body {
     font-family: 'Minecraft_1.1', sans-serif;
     margin: 0;
     padding-top: 60px;
-    background-image: url('фон.jpeg'); /* Сюди вставте шлях до свого основного фонового зображення */
+    background-image: url('фон.jpg'); /* Сюди вставте шлях до свого основного фонового зображення */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -28,7 +28,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Біла тінь для контрасту */
 }
 
 .logo a img {
@@ -64,7 +63,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #007bff; /* Синій колір при наведенні (можете змінити) */
+    color: #FF0000; /* Синій колір при наведенні (можете змінити) */
 }
 
 .content {
@@ -122,7 +121,6 @@ nav ul li a:hover {
     z-index: 2;
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Біла тінь для тексту hero */
-    color: #fff;
     transition: opacity 3s ease-in-out, background 3s ease-in-out;
 }
 
@@ -132,7 +130,6 @@ nav ul li a:hover {
 
 .hero:hover .hero-transition {
     opacity: 1;
-    color: #000;
     background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px);
 }
 
