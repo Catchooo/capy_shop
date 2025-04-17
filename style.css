@@ -98,6 +98,7 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     z-index: 1;
+    opacity: 1;
     transition: opacity 1s ease-in-out;
 }
 
@@ -107,38 +108,24 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, black 50%, transparent 50%); /* Забираємо початковий фон зі смужками */
+    background: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон для тексту */
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 1; /* Робимо текст видимим за замовчуванням */
+    opacity: 1; /* Текст видимий за замовчуванням */
     z-index: 2;
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    transition: opacity 1s ease-in-out, background 2s ease-in-out; /* Залишаємо перехід для прозорості та фону */
-    background-color: rgba(0, 0, 0, 0.6); /* Додаємо напівпрозорий фон для кращої читабельності тексту */
-}
-
-.hero:hover .hero-transition {
-    opacity: 1; /* Залишаємо прозорість 1 при наведенні (текст залишається видимим) */
-    background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px); /* Додаємо смужки при наведенні */
-}
-
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out, background 2s ease-in-out;
 }
 
 .hero:hover .hero-image {
-    opacity: 0.6; /* Трохи затемнюємо фон при наведенні */
+    opacity: 0; /* Зображення зникає при наведенні */
+}
+
+.hero:hover .hero-transition {
+    opacity: 1; /* Текст залишається видимим */
+    background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px); /* З'являються смужки при наведенні */
 }
 
 .product-grid {
