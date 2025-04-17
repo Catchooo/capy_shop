@@ -121,7 +121,7 @@ nav ul li a:hover {
     z-index: 2;
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Біла тінь для тексту hero */
-    transition: opacity 3s ease-in-out, background 3s ease-in-out;
+    transition: opacity 1s ease-in-out, background 2s ease-in-out, text-shadow 0.5s ease-in-out; /* Додано плавний перехід для text-shadow */
 }
 
 .hero:hover .hero-image {
