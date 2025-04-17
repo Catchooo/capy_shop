@@ -130,6 +130,7 @@ nav ul li a:hover {
 
 .hero:hover .hero-transition {
     opacity: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px);
 }
 
