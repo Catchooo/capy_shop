@@ -122,6 +122,7 @@ nav ul li a:hover {
     z-index: 2;
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Біла тінь для тексту hero */
+    color: #fff;
     transition: opacity 1s ease-in-out, background 2s ease-in-out;
 }
 
@@ -131,6 +132,7 @@ nav ul li a:hover {
 
 .hero:hover .hero-transition {
     opacity: 1;
+    color: #000;
     background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px);
 }
 
