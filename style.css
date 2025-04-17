@@ -98,7 +98,8 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     z-index: 1;
-    transition: opacity 1s ease-in-out;
+    opacity: 1; /* Початково робимо зображення видимим */
+    transition: opacity 1s ease-in-out; /* Додаємо плавний перехід прозорості */
 }
 
 .hero-transition {
@@ -111,7 +112,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0.5; /* Змінено прозорість на 50% */
+    opacity: 65; /* Початково робимо перехід прозорим */
     z-index: 2;
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -119,11 +120,11 @@ nav ul li a:hover {
 }
 
 .hero:hover .hero-image {
-    opacity: 0;
+    opacity: 0; /* При наведенні робимо зображення прозорим */
 }
 
 .hero:hover .hero-transition {
-    opacity: 1;
+    opacity: 1; /* При наведенні робимо перехід видимим */
     background: repeating-linear-gradient(45deg, black, black 20px, white 20px, white 40px);
 }
 
