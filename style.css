@@ -116,7 +116,7 @@ nav ul li a:hover {
     z-index: 2;
     font-size: 3em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    transition: opacity 1s ease-in-out, background 2s ease-in-out;
+    transition: opacity 3s ease-in-out, background 3s ease-in-out;
 }
 
 .hero:hover .hero-image {
