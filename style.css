@@ -361,3 +361,22 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+button {
+    font-family: 'Minecraft_1.1', sans-serif; /* Застосовуємо ваш шрифт */
+    background-color: #000; /* Чорний фон */
+    color: #fff; /* Білий колір тексту */
+    border: 1px solid #333; /* Додамо темно-сіру межу для кращої видимості (за бажанням) */
+    padding: 8px 12px; /* Додамо трохи внутрішніх відступів для комфорту */
+    border-radius: 5px; /* Закруглимо кути (за бажанням) */
+    box-sizing: border-box; /* Важливо для правильного розрахунку розмірів */
+}
+
+button:hover {
+    background-color: #333; /* Трохи світліший чорний при наведенні (за бажанням) */
+    cursor: pointer; /* Вказівник миші при наведенні на кнопку */
+}
