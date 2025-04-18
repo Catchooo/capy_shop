@@ -14,6 +14,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #fff; /* Білий колір тексту за замовчуванням */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Забезпечуємо, щоб body також займав всю висоту */
 }
 
 .fixed-header {
@@ -28,6 +31,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0; /* Запобігаємо стисканню шапки */
 }
 
 .logo a img {
@@ -63,13 +67,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FF0000; /* Синій колір при наведенні (можете змінити) */
+    color: #FF0000; /* Червоний колір при наведенні */
 }
 
 .content {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон для контенту */
     border-radius: 8px;
+    flex-grow: 1; /* Дозволяємо контенту розтягуватися */
 }
 
 .hero {
@@ -181,6 +186,7 @@ footer {
     bottom: 0;
     width: 100%;
     border-top: 1px solid #333; /* Темно-сіра межа зверху */
+    flex-shrink: 0; /* Запобігаємо стисканню футера */
 }
 
 .cart-icon {
