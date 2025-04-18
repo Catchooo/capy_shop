@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const cartItemDiv = document.createElement('div');
                 cartItemDiv.classList.add('cart-item');
                 cartItemDiv.innerHTML = `
-                    <img src="capybara${item.id}.jpg" alt="${item.name}">
+                    <img src="capybara${item.id}.png" alt="${item.name}">
                     <div class="cart-item-details">
                         <div class="cart-item-name">${item.name}</div>
                         <div class="cart-item-price">${item.price} грн</div>
