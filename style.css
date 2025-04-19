@@ -9,14 +9,15 @@ body {
     font-family: 'Minecraft_1.1', sans-serif;
     margin: 0;
     padding-top: 60px;
-    background-image: url('фон.jpg'); /* Сюди вставте шлях до свого основного фонового зображення */
+    background-image: url('фон.jpg'); /* Вставте шлях до свого фонового зображення */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #fff; /* Білий колір тексту за замовчуванням */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Забезпечуємо, щоб body також займав всю висоту */
+    /* Прибираємо розтягування на всю висоту: */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* min-height: 100vh; */
 }
 
 .fixed-header {
@@ -31,7 +32,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-shrink: 0; /* Запобігаємо стисканню шапки */
+    /* Прибираємо запобігання стисканню, якщо більше не потрібно: */
+    /* flex-shrink: 0; */
 }
 
 .logo a img {
@@ -74,7 +76,8 @@ nav ul li a:hover {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон для контенту */
     border-radius: 8px;
-    flex-grow: 1; /* Дозволяємо контенту розтягуватися */
+    /* Прибираємо розтягування контенту: */
+    /* flex-grow: 1; */
 }
 
 .hero {
@@ -186,7 +189,8 @@ footer {
     bottom: 0;
     width: 100%;
     border-top: 1px solid #333; /* Темно-сіра межа зверху */
-    flex-shrink: 0; /* Запобігаємо стисканню футера */
+    /* Прибираємо запобігання стисканню, якщо більше не потрібно: */
+    /* flex-shrink: 0; */
 }
 
 .cart-icon {
