@@ -14,10 +14,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #fff; /* Білий колір тексту за замовчуванням */
-    /* Прибираємо розтягування на всю висоту: */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* min-height: 100vh; */
 }
 
 .fixed-header {
@@ -32,8 +28,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Прибираємо запобігання стисканню, якщо більше не потрібно: */
-    /* flex-shrink: 0; */
 }
 
 .logo a img {
@@ -76,8 +70,6 @@ nav ul li a:hover {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон для контенту */
     border-radius: 8px;
-    /* Прибираємо розтягування контенту: */
-    /* flex-grow: 1; */
 }
 
 .hero {
@@ -161,8 +153,10 @@ nav ul li a:hover {
 }
 
 .product-item img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* Щоб зображення не перевищувало ширину контейнера */
+    height: auto;    /* Щоб висота масштабувалася пропорційно ширині */
+    max-height: 150px; /* Задайте бажану максимальну висоту для всіх зображень */
+    object-fit: contain; /* Зберігає співвідношення сторін та вписує в контейнер */
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -189,8 +183,6 @@ footer {
     bottom: 0;
     width: 100%;
     border-top: 1px solid #333; /* Темно-сіра межа зверху */
-    /* Прибираємо запобігання стисканню, якщо більше не потрібно: */
-    /* flex-shrink: 0; */
 }
 
 .cart-icon {
