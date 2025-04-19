@@ -90,8 +90,11 @@ nav ul li a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Розтягнути на всю ширину контейнера .hero */
+    height: 100%; /* Розтягнути на всю висоту контейнера .hero */
+    background-size: cover; /* Масштабувати зображення, щоб покрити весь контейнер */
+    background-position: center; /* Центрувати зображення */
+    z-index: 0; /* Переконатися, що фон позаду інших елементів hero */
 }
 
 .hero-image {
@@ -153,10 +156,10 @@ nav ul li a:hover {
 }
 
 .product-item img {
-    max-width: 100%; /* Щоб зображення не перевищувало ширину контейнера */
-    height: auto;    /* Щоб висота масштабувалася пропорційно ширині */
-    max-height: 150px; /* Задайте бажану максимальну висоту для всіх зображень */
-    object-fit: contain; /* Зберігає співвідношення сторін та вписує в контейнер */
+    max-width: 100%;
+    height: auto;
+    max-height: 150px; /* Задайте бажану максимальну висоту */
+    object-fit: contain; /* Або cover, залежно від бажаного результату */
     border-radius: 5px;
     margin-bottom: 10px;
 }
