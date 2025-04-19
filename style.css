@@ -9,10 +9,7 @@ body {
     font-family: 'Minecraft_1.1', sans-serif;
     margin: 0;
     padding-top: 60px;
-    background-image: url('фон.jpg'); /* Вставте шлях до свого фонового зображення */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #000; /* Чорний колір фону за замовчуванням, якщо зображення не завантажаться */
     color: #fff; /* Білий колір тексту за замовчуванням */
 }
 
@@ -66,6 +63,33 @@ nav ul li a:hover {
     color: #FF0000; /* Червоний колір при наведенні */
 }
 
+.section-one {
+    background-image: url('fon1.jpg'); /* Шлях до першого зображення */
+    background-size: cover; /* Розтягнути та обрізати, щоб покрити весь контейнер */
+    background-position: center; /* Центрувати зображення */
+    background-repeat: no-repeat; /* Не повторювати зображення */
+    padding: 100px 20px; /* Задайте відступи, щоб було видно фон */
+    color: #fff; /* Колір тексту на цьому фоні */
+}
+
+.section-two {
+    background-image: url('fon2.jpg'); /* Шлях до другого зображення */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: #fff;
+}
+
+.section-three {
+    background-image: url('fon3.jpg'); /* Шлях до третього зображення */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: #fff;
+}
+
 .content {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон для контенту */
@@ -90,11 +114,11 @@ nav ul li a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Розтягнути на всю ширину контейнера .hero */
-    height: 100%; /* Розтягнути на всю висоту контейнера .hero */
-    background-size: cover; /* Масштабувати зображення, щоб покрити весь контейнер */
-    background-position: center; /* Центрувати зображення */
-    z-index: 0; /* Переконатися, що фон позаду інших елементів hero */
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
 }
 
 .hero-image {
