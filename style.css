@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'Ancient_Kyiv';
-    src: url('Ancient_Kyiv.ttf') format('truetype');
+    font-family: 'DS_Pixel_Cyr';
+    src: url('DS_Pixel_Cyr.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'Ancient_Kyiv', sans-serif;
+    font-family: 'DS_Pixel_Cyr', sans-serif;
     margin: 0;
     padding-top: 60px;
     background-color: #000; /* Чорний колір фону за замовчуванням, якщо зображення не завантажаться */
