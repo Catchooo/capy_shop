@@ -223,8 +223,11 @@ footer {
     color: #fff;
     cursor: pointer;
     font-size: 1.1em;
-    margin-left: 20px;
+    margin-left: 10px;
     transition: color 0.3s ease;
+    padding-right: 15px;
+    position: relative;
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 #open-cart-btn:hover {
@@ -237,7 +240,12 @@ footer {
     border-radius: 50%;
     padding: 5px 8px;
     font-size: 0.8em;
-    margin-left: 5px;
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-modal {
@@ -262,7 +270,8 @@ footer {
     position: relative;
     color: #fff;
     border: 1px solid #333;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до вмісту кошика */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
+    margin: auto;
 }
 
 .cart-header {
@@ -276,7 +285,7 @@ footer {
 .cart-header h2 {
     margin: 0;
     color: #fff;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до заголовка кошика */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .close-btn {
@@ -289,7 +298,7 @@ footer {
     top: 10px;
     right: 10px;
     transition: color 0.3s ease;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до кнопки закриття */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .close-btn:hover {
@@ -298,7 +307,7 @@ footer {
 
 #cart-items {
     margin-bottom: 15px;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до елементів кошика */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-item {
@@ -307,7 +316,7 @@ footer {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #333;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до елементів кошика */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-item:last-child {
@@ -326,27 +335,27 @@ footer {
 
 .cart-item-details {
     flex-grow: 1;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до деталей елемента кошика */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-item-name {
     font-weight: bold;
     color: #fff;
     margin-bottom: 5px;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до назви товару */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-item-price {
     color: #558b2f;
     font-size: 0.9em;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до ціни товару */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-item-quantity {
     margin-left: auto;
     font-size: 0.9em;
     color: #eee;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до кількості */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .remove-from-cart-btn {
@@ -357,7 +366,7 @@ footer {
     font-size: 1em;
     margin-left: 10px;
     transition: color 0.3s ease;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до кнопки видалення */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .remove-from-cart-btn:hover {
@@ -366,14 +375,14 @@ footer {
 
 .cart-footer {
     text-align: right;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до підвалу кошика */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-footer p {
     font-weight: bold;
     color: #fff;
     margin-bottom: 10px;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до загальної суми */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .checkout-btn {
@@ -385,7 +394,7 @@ footer {
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до кнопки оформлення */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .checkout-btn:hover {
@@ -396,7 +405,7 @@ footer {
     color: #777;
     text-align: center;
     padding: 20px 0;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important; /* Застосовуємо шрифт до повідомлення про порожній кошик */
+    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 input[type="text"],
@@ -441,9 +450,4 @@ button:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-button:hover {
-    background-color: #333; /* Трохи світліший чорний при наведенні (за бажанням) */
-    cursor: pointer; /* Вказівник миші при наведенні на кнопку */
 }
