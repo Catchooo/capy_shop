@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'Minecraft_1.1';
-    src: url('Minecraft_1.1.ttf') format('truetype');
+    font-family: 'Ancient_Kyiv';
+    src: url('Ancient_Kyiv.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'Minecraft_1.1', sans-serif;
+    font-family: 'Ancient_Kyiv', sans-serif;
     margin: 0;
     padding-top: 60px;
     background-color: #000; /* Чорний колір фону за замовчуванням, якщо зображення не завантажаться */
