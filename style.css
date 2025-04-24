@@ -1,21 +1,21 @@
 @font-face {
-    font-family: 'DS_Pixel_Cyr';
-    src: url('DS_Pixel_Cyr.ttf') format('truetype');
+    font-family: 'Ancient_Kyiv';
+    src: url('Ancient_Kyiv.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'DS_Pixel_Cyr', sans-serif;
+    font-family: 'Ancient_Kyiv', sans-serif;
     margin: 0;
     padding-top: 60px;
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Чорний колір фону за замовчуванням, якщо зображення не завантажаться */
+    color: #fff; /* Білий колір тексту за замовчуванням */
 }
 
 .fixed-header {
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Чорний фон для шапки */
+    color: #fff; /* Білий колір тексту в шапці */
     padding: 15px 20px;
     position: fixed;
     top: 0;
@@ -35,7 +35,7 @@ body {
 .logo a {
     font-size: 28px;
     font-weight: bold;
-    color: #558b2f;
+    color: #558b2f; /* Залишив зелений для логотипа */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -53,27 +53,27 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fff; /* Білий колір посилань навігації */
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #FF0000;
+    color: #FF0000; /* Червоний колір при наведенні */
 }
 
 .section-one {
-    background-image: url('fon1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 100px 20px;
-    color: #fff;
+    background-image: url('fon1.jpg'); /* Шлях до першого зображення */
+    background-size: cover; /* Розтягнути та обрізати, щоб покрити весь контейнер */
+    background-position: center; /* Центрувати зображення */
+    background-repeat: no-repeat; /* Не повторювати зображення */
+    padding: 100px 20px; /* Задайте відступи, щоб було видно фон */
+    color: #fff; /* Колір тексту на цьому фоні */
 }
 
 .section-two {
-    background-image: url('fon2.jpg');
+    background-image: url('fon2.jpg'); /* Шлях до другого зображення */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -82,7 +82,7 @@ nav ul li a:hover {
 }
 
 .section-three {
-    background-image: url('fon3.jpg');
+    background-image: url('fon3.jpg'); /* Шлях до третього зображення */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -92,7 +92,7 @@ nav ul li a:hover {
 
 .content {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон для контенту */
     border-radius: 8px;
 }
 
@@ -104,7 +104,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #fff; /* Білий колір тексту hero */
     text-align: center;
     font-size: 2em;
     font-weight: bold;
@@ -140,15 +140,15 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон для тексту hero */
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 1;
     z-index: 2;
     font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-    transition: opacity 1s ease-in-out, background 2s ease-in-out, text-shadow 0.5s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Біла тінь для тексту hero */
+    transition: opacity 1s ease-in-out, background 2s ease-in-out, text-shadow 0.5s ease-in-out; /* Додано плавний перехід для text-shadow */
 }
 
 .hero:hover .hero-image {
@@ -166,24 +166,24 @@ nav ul li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон для сітки товарів */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Біла тінь */
 }
 
 .product-item {
-    border: 1px solid #333;
+    border: 1px solid #333; /* Темно-сіра межа */
     border-radius: 8px;
     padding: 15px;
     text-align: center;
-    background-color: #222;
+    background-color: #222; /* Темно-сірий фон елемента товару */
 }
 
 .product-item img {
     max-width: 100%;
     height: auto;
-    max-height: 150px;
-    object-fit: contain;
+    max-height: 150px; /* Задайте бажану максимальну висоту */
+    object-fit: contain; /* Або cover, залежно від бажаного результату */
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -191,25 +191,25 @@ nav ul li a:hover {
 .product-item h3 {
     font-size: 1.5em;
     margin-bottom: 5px;
-    color: #fff;
+    color: #fff; /* Білий колір назви товару */
 }
 
 .product-item .price {
-    color: #558b2f;
+    color: #558b2f; /* Залишив зелений для ціни */
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 footer {
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Чорний фон для підвалу */
+    color: #fff; /* Білий колір тексту в підвалі */
     text-align: center;
     padding: 10px 0;
     font-size: 0.9em;
     position: relative;
     bottom: 0;
     width: 100%;
-    border-top: 1px solid #333;
+    border-top: 1px solid #333; /* Темно-сіра межа зверху */
 }
 
 .cart-icon {
@@ -220,18 +220,15 @@ footer {
 #open-cart-btn {
     background: none;
     border: none;
-    color: #fff;
+    color: #fff; /* Білий колір іконки кошика */
     cursor: pointer;
     font-size: 1.1em;
-    margin-left: 10px;
+    margin-left: 20px;
     transition: color 0.3s ease;
-    padding-right: 15px;
-    position: relative;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 #open-cart-btn:hover {
-    color: #558b2f;
+    color: #558b2f; /* Зелений колір при наведенні на кошик */
 }
 
 #cart-item-count {
@@ -240,17 +237,7 @@ footer {
     border-radius: 50%;
     padding: 5px 8px;
     font-size: 0.8em;
-    position: absolute;
-    left: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
-    width: auto;
-    height: auto;
-    min-width: 18px;
-    text-align: center;
-    line-height: 1;
+    margin-left: 5px;
 }
 
 .cart-modal {
@@ -259,7 +246,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Напівпрозорий чорний фон для модального вікна кошика */
     display: none;
     justify-content: center;
     align-items: center;
@@ -267,16 +254,14 @@ footer {
 }
 
 .cart-content {
-    background-color: #222;
+    background-color: #222; /* Темно-сірий фон вмісту кошика */
     padding: 20px;
     border-radius: 8px;
     width: 80%;
     max-width: 500px;
     position: relative;
-    color: #fff;
-    border: 1px solid #333;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
-    margin: auto;
+    color: #fff; /* Білий колір тексту у вмісті кошика */
+    border: 1px solid #333; /* Темно-сіра межа вмісту кошика */
 }
 
 .cart-header {
@@ -284,35 +269,32 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #333; /* Темно-сіра межа заголовка кошика */
 }
 
 .cart-header h2 {
     margin: 0;
-    color: #fff;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
+    color: #fff; /* Білий колір заголовка кошика */
 }
 
 .close-btn {
     background: none;
     border: none;
-    color: #aaa;
+    color: #aaa; /* Сірий колір кнопки закриття */
     font-size: 2em;
     cursor: pointer;
     position: absolute;
     top: 10px;
     right: 10px;
     transition: color 0.3s ease;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .close-btn:hover {
-    color: #fff;
+    color: #fff; /* Білий колір при наведенні на кнопку закриття */
 }
 
 #cart-items {
     margin-bottom: 15px;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-item {
@@ -320,8 +302,7 @@ footer {
     align-items: center;
     margin-bottom: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #333;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
+    border-bottom: 1px solid #333; /* Темно-сіра межа елемента кошика */
 }
 
 .cart-item:last-child {
@@ -340,58 +321,51 @@ footer {
 
 .cart-item-details {
     flex-grow: 1;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-item-name {
     font-weight: bold;
-    color: #fff;
+    color: #fff; /* Білий колір назви товару в кошику */
     margin-bottom: 5px;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-item-price {
-    color: #558b2f;
+    color: #558b2f; /* Зелений колір ціни товару в кошику */
     font-size: 0.9em;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-item-quantity {
     margin-left: auto;
     font-size: 0.9em;
-    color: #eee;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
+    color: #eee; /* Світло-сірий колір кількості */
 }
 
 .remove-from-cart-btn {
     background: none;
     border: none;
-    color: #ff6f61;
+    color: #ff6f61; /* Червоний колір кнопки видалення */
     cursor: pointer;
     font-size: 1em;
     margin-left: 10px;
     transition: color 0.3s ease;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .remove-from-cart-btn:hover {
-    color: #d32f2f;
+    color: #d32f2f; /* Темно-червоний колір при наведенні */
 }
 
 .cart-footer {
     text-align: right;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .cart-footer p {
     font-weight: bold;
-    color: #fff;
+    color: #fff; /* Білий колір загальної суми */
     margin-bottom: 10px;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .checkout-btn {
-    background-color: #558b2f;
+    background-color: #558b2f; /* Зелений фон кнопки оформлення */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -399,18 +373,16 @@ footer {
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 .checkout-btn:hover {
-    background-color: #38661d;
+    background-color: #38661d; /* Темно-зелений фон при наведенні */
 }
 
 #empty-cart-message {
-    color: #777;
+    color: #777; /* Сірий колір повідомлення про порожній кошик */
     text-align: center;
     padding: 20px 0;
-    font-family: 'DS_Pixel_Cyr', sans-serif !important;
 }
 
 input[type="text"],
@@ -418,41 +390,16 @@ input[type="email"],
 input[type="password"],
 textarea,
 button {
-    font-family: 'DS_Pixel_Cyr', sans-serif;
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #333;
-    padding: 8px 12px;
-    border-radius: 5px;
-    box-sizing: border-box;
+    font-family: 'Minecraft_1.1', sans-serif; /* Застосовуємо ваш шрифт */
+    background-color: #000; /* Чорний фон */
+    color: #fff; /* Білий колір тексту */
+    border: 1px solid #333; /* Додамо темно-сіру межу для кращої видимості (за бажанням) */
+    padding: 8px 12px; /* Додамо трохи внутрішніх відступів для комфорту */
+    border-radius: 5px; /* Закруглимо кути (за бажанням) */
+    box-sizing: border-box; /* Важливо для правильного розрахунку розмірів */
 }
 
 button:hover {
-    background-color: #333;
-    cursor: pointer;
-}
-
-/* Стилі для фону сторінок */
-.index-page {
-    background-image: url('fon1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.about-page {
-    background-image: url('fon3.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.contact-page {
-    background-image: url('fon2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #333; /* Трохи світліший чорний при наведенні (за бажанням) */
+    cursor: pointer; /* Вказівник миші при наведенні на кнопку */
 }
