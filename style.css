@@ -267,7 +267,7 @@ footer {
     width: 100%;
 }
 
-/* Стилі для модального вікна кошика */
+/* Стилі для модального вікна кошика (оновлено для центрування) */
 .cart-modal {
     position: fixed;
     top: 0;
@@ -276,8 +276,8 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
-    justify-content: flex-end; /* Вирівнюємо по правому краю */
-    align-items: center;
+    justify-content: center; /* Центруємо по горизонталі */
+    align-items: center; /* Центруємо по вертикалі */
     z-index: 1000;
 }
 
