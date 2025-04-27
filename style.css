@@ -301,6 +301,15 @@ footer {
     border: 1px solid #333;
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
     font-family: 'DS_Pixel_Cyr', sans-serif;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.cart-modal.open .cart-content {
+    transform: translateY(0);
+    opacity: 1;
+    animation: bounce 0.4s ease-out;
 }
 
 .cart-header {
@@ -428,12 +437,9 @@ footer {
     justify-content: flex-end;
     align-items: center;
     z-index: 1000;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
 }
 
 .ai-modal.open {
-    transform: translateX(0);
     display: flex;
 }
 
@@ -451,6 +457,15 @@ footer {
     display: flex;
     flex-direction: column;
     font-family: 'DS_Pixel_Cyr', sans-serif;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.ai-modal.open .ai-content {
+    transform: translateY(0);
+    opacity: 1;
+    animation: bounce 0.4s ease-out;
 }
 
 .ai-header {
@@ -536,6 +551,12 @@ footer {
 
 #send-ai-btn:hover {
     background-color: #8bc34a;
+}
+
+#loading-indicator {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .spinner {
