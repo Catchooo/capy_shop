@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const aiChatLog = document.getElementById('ai-chat-log');
     const aiInput = document.getElementById('ai-input');
     const sendAiBtn = document.getElementById('send-ai-btn');
+    const loadingIndicator = document.getElementById('loading-indicator');
 
     openAiBtn.addEventListener('click', () => {
         aiModal.classList.add('open');
@@ -63,21 +64,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function sendToGemini(message) {
-        const proxyUrl = 'contact_gemini.php'; // Шлях до твого PHP файлу
+        const proxyUrl = 'contact_gemini.php';
 
         try {
+            loadingIndicator.style.display = 'block';
             const response = await fetch(proxyUrl, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded', // Змінюємо Content-Type
+                    'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: new URLSearchParams({ gemini_message: message }), // Формуємо дані як x-www-form-urlencoded
+                body: new URLSearchParams({ gemini_message: message }),
             });
+            loadingIndicator.style.display = 'none';
 
             if (!response.ok) {
-                const errorData = await response.text(); // Отримуємо помилку як текст, оскільки бекенд може повертати не JSON для помилок форми
+                const errorData = await response.text();
                 console.error('Помилка від бекенду:', errorData);
-                addAiErrorMessage('Виникла помилка при отриманні відповіді від ШІ.');
+                addAiErrorMessage('Виникла помилка при отриманні відповіді від ШІ: ' + errorData);
                 return;
             }
 
@@ -92,6 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Помилка відправки запиту на бекенд:', error);
             addAiErrorMessage('Не вдалося зв\'язатися з сервером ШІ.');
+            loadingIndicator.style.display = 'none';
+        } finally {
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
         }
     }
 
@@ -177,5 +185,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    updateCartDisplay(); // Відображаємо кошик при завантаженні сторінки (якщо є товари)
+    updateCartDisplay();
 });
