@@ -8,6 +8,93 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartItemCountElement = document.getElementById('cart-item-count');
     const emptyCartMessage = document.getElementById('empty-cart-message');
 
+    const aiModal = document.getElementById('ai-modal');
+    const openAiBtn = document.getElementById('open-ai-btn');
+    const closeAiBtn = document.getElementById('close-ai-btn');
+    const aiChatLog = document.getElementById('ai-chat-log');
+    const aiInput = document.getElementById('ai-input');
+    const sendAiBtn = document.getElementById('send-ai-btn');
+
+    openAiBtn.addEventListener('click', () => {
+        aiModal.classList.add('open');
+    });
+
+    closeAiBtn.addEventListener('click', () => {
+        aiModal.classList.remove('open');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === aiModal) {
+            aiModal.classList.remove('open');
+        }
+    });
+
+    sendAiBtn.addEventListener('click', () => {
+        const message = aiInput.value.trim();
+        if (message) {
+            addUserMessage(message);
+            aiInput.value = '';
+            sendToGemini(message);
+        }
+    });
+
+    function addUserMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('ai-message', 'user');
+        messageDiv.textContent = text;
+        aiChatLog.appendChild(messageDiv);
+        aiChatLog.scrollTop = aiChatLog.scrollHeight;
+    }
+
+    function addAiMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('ai-message', 'ai');
+        messageDiv.textContent = text;
+        aiChatLog.appendChild(messageDiv);
+        aiChatLog.scrollTop = aiChatLog.scrollHeight;
+    }
+
+    function addAiErrorMessage(text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('ai-message', 'ai-error');
+        messageDiv.textContent = text;
+        aiChatLog.appendChild(messageDiv);
+        aiChatLog.scrollTop = aiChatLog.scrollHeight;
+    }
+
+    async function sendToGemini(message) {
+        const proxyUrl = 'contact_gemini.php'; // Шлях до твого PHP файлу
+
+        try {
+            const response = await fetch(proxyUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded', // Змінюємо Content-Type
+                },
+                body: new URLSearchParams({ gemini_message: message }), // Формуємо дані як x-www-form-urlencoded
+            });
+
+            if (!response.ok) {
+                const errorData = await response.text(); // Отримуємо помилку як текст, оскільки бекенд може повертати не JSON для помилок форми
+                console.error('Помилка від бекенду:', errorData);
+                addAiErrorMessage('Виникла помилка при отриманні відповіді від ШІ.');
+                return;
+            }
+
+            const data = await response.json();
+            const aiResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (aiResponse) {
+                addAiMessage(aiResponse);
+            } else {
+                addAiErrorMessage('Не вдалося отримати змістовну відповідь від ШІ.');
+            }
+
+        } catch (error) {
+            console.error('Помилка відправки запиту на бекенд:', error);
+            addAiErrorMessage('Не вдалося зв\'язатися з сервером ШІ.');
+        }
+    }
+
     function updateCartDisplay() {
         const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 
