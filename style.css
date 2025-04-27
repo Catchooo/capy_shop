@@ -412,31 +412,34 @@ footer {
 .ai-modal {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0; /* Змінюємо left на right */
+    width: 80%; /* Можеш налаштувати ширину */
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
-    justify-content: flex-end; /* Вирівнюємо по правому краю */
+    justify-content: flex-end; /* Залишаємо для вирівнювання контенту всередині */
     align-items: center;
     z-index: 1000;
+    transform: translateX(100%); /* Початково ховаємо вікно за правим краєм */
+    transition: transform 0.3s ease-in-out; /* Додаємо плавний перехід */
 }
 
 .ai-modal.open {
-    display: flex;
+    transform: translateX(0); /* Показуємо вікно при відкритті */
+    display: flex; /* Переконуємося, що flex залишається */
 }
 
 .ai-content {
     background-color: #222;
     padding: 20px;
     border-radius: 8px;
-    width: 80%;
-    max-width: 400px; /* Зробимо трохи вужчим за кошик */
-    min-height: 50%; /* Зробимо довшим */
+    width: 90%; /* Можеш налаштувати ширину контенту */
+    max-width: 400px;
+    min-height: 50%;
     position: relative;
     color: #fff;
     border: 1px solid #333;
-    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3); /* Тінь зліва */
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3); /* Тінь зліва, бо вікно справа */
     display: flex;
     flex-direction: column;
 }
