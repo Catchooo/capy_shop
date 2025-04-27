@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    aiInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            sendAiBtn.click();
+        }
+    });
+
     function addUserMessage(text) {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('ai-message', 'user');
