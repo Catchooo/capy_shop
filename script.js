@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function sendToGemini(message) {
-        const proxyUrl = 'contact_gemini.php';
+        const proxyUrl = 'gemini_proxy.php';
 
         try {
             loadingIndicator.style.display = 'block';
